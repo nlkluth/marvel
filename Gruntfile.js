@@ -15,7 +15,6 @@ module.exports = function(grunt) {
   // Project Configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    assets: grunt.file.readJSON('server/config/assets.json'),
     watch: {
       js: {
         files: paths.js,
@@ -39,12 +38,9 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      all: {
-        src: paths.js,
-        options: {
-          jshintrc: true
-        }
-      }
+      all: [
+        'public/scripts/{,*/}*.js'
+      ]
     },
     uglify: {
       options: {
@@ -53,12 +49,6 @@ module.exports = function(grunt) {
       production: {
         files: '<%= assets.js %>'
       }
-    },
-    csslint: {
-      options: {
-        csslintrc: '.csslintrc'
-      },
-      src: paths.css
     },
     cssmin: {
       combine: {
@@ -110,11 +100,8 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   //Default task(s).
-  if (process.env.NODE_ENV === 'production') {
-    grunt.registerTask('default', ['cssmin', 'uglify', 'concurrent']);
-  } else {
-    grunt.registerTask('default', ['jshint', 'csslint', 'concurrent']);
-  }
+  grunt.registerTask('build', ['cssmin', 'uglify', 'concurrent']);
+  grunt.registerTask('default', ['jshint', 'concurrent']);
 
   //Test task.
   grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
