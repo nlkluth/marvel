@@ -2,7 +2,7 @@
   "name": "marvel",
   "version": "0.0.0",
   "description": "Marvel API",
-  "main": "server/index.js",
+  "main": "server.js",
   "scripts": {
     "test": "make test"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/nlkluth/marvel/issues"
   },
-  "homepage": "https://github.com/nlkluth/marvel"
+  "homepage": "https://github.com/nlkluth/marvel",
+  "dependencies": {
+    "express": "^4.1.1"
+  }
 }
