@@ -334,7 +334,7 @@ module.exports = function(grunt) {
     'cssmin',
     'uglify',
     'rev',
-    'usermin',
+    'usemin',
     'htmlmin',
     'concurrent'
   ]);
