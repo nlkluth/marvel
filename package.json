@@ -1,27 +1,19 @@
 {
-  "name": "node-js-sample",
-  "version": "0.0.3",
-  "description": "a sample node.js app for heroku",
-  "main": "web.js",
+  "name": "marvel",
+  "version": "0.0.0",
+  "description": "Marvel API",
+  "main": "server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "express": "~3.3.4"
-  },
-  "engines": {
-    "node": "0.10.x",
-    "npm": "1.3.x"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-sample"
+    "url": "https://nlkluth@github.com/nlkluth/marvel.git"
   },
-  "keywords": [
-    "node",
-    "heroku"
-  ],
-  "author": "Mark Pundsack",
-  "license": "BSD",
-  "gitHead": "90fd58e343c29e54fc1d4e19036595500b2bdc21"
+  "author": "Nathan Kluth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nlkluth/marvel/issues"
+  },
+  "homepage": "https://github.com/nlkluth/marvel"
 }
