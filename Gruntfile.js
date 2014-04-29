@@ -279,7 +279,7 @@ module.exports = function(grunt) {
     },
     nodemon: {
       dev: {
-        script: 'server.js',
+        script: 'app.js',
         options: {
           args: [],
           ignore: ['public/**', 'node_modules/**'],
@@ -302,7 +302,7 @@ module.exports = function(grunt) {
     mochaTest: {
       options: {
         reporter: 'spec',
-        require: 'server.js'
+        require: 'app.js'
       },
       src: ['test/mocha/**/*.js']
     },
@@ -338,7 +338,7 @@ module.exports = function(grunt) {
     'htmlmin',
     'concurrent'
   ]);
-  grunt.registerTask('default', ['jshint', 'concurrent']);
+  grunt.registerTask('default', ['jshint', 'bowerInstall', 'concurrent']);
 
   //Test task.
   grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
