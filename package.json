@@ -31,7 +31,6 @@
     "grunt": "^0.4.4",
     "grunt-cli": "^0.1.13",
     "lodash": "^2.4.1",
-    "angular-ui-router": "^0.2.10",
     "restangular": "^1.4.0"
   },
   "devDependencies": {
