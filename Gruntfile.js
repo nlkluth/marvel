@@ -43,10 +43,6 @@ module.exports = function(grunt) {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
       },
-      absurd: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.js'],
-        tasks: ['absurd', 'newer:copy:styles', 'autoprefixer']
-      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -59,13 +55,6 @@ module.exports = function(grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
-      },
-      hapi: {
-        files: ['./server/{,*/}*.js', './server/{,*/}/{,*/}*.js'],
-        tasks: ['hapi'],
-        options: {
-          spawn: false
-        }
       }
     },
 
@@ -338,7 +327,13 @@ module.exports = function(grunt) {
     'htmlmin',
     'concurrent'
   ]);
-  grunt.registerTask('default', ['jshint', 'bowerInstall', 'concurrent']);
+  grunt.registerTask('default', [
+    'clean:server',
+    'bowerInstall',
+    'autoprefixer',
+    'jshint',
+    'concurrent',
+  ]);
 
   //Test task.
   grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
