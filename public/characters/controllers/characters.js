@@ -2,6 +2,10 @@
 
 angular.module('marvel.characters')
 
-.controller('CharactersController', function ($scope) {
-  $scope.test = 'test';
+.controller('CharactersController', function ($scope, Restangular) {
+  var Characters = Restangular.all('characters');
+
+  Characters.then(function(characters) {
+    $scope.characters = characters;
+  });
 });
