@@ -30,7 +30,8 @@
     "load-grunt-tasks": "^0.4.0",
     "grunt": "^0.4.4",
     "grunt-cli": "^0.1.13",
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "jade": "^1.3.1"
   },
   "devDependencies": {
     "karma-ng-scenario": "~0.1.0",
