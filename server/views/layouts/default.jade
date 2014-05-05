@@ -2,8 +2,8 @@ doctype
 html(lang='en')
   include ../includes/head
   body
-    header.navbar.navbar-fixed-top.navbar-inverse(data-ng-include="'views/header.html'")
-    section.content
-      section.container
+    header(data-ng-include="'shared/header.html'")
+    div.content
+      div.container
         block content
     include ../includes/foot
