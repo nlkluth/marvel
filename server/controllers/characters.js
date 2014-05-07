@@ -17,13 +17,7 @@ exports.list = function(req, res) {
 
   request(url, function(error, response, body) {
     if (!error && response.statusCode === 200) {
-      debug('no error, %s', body);
       res.send(body);
     }
-
-    console.log(response);
-    console.log(response.statusCode);
-    console.log(error);
-    console.log(body);
   });
 };
