@@ -1,9 +1,24 @@
 'use strict';
 
-angular.module('marvel', ['ui.router', 'marvel.characters'])
+angular.module('marvel', ['ui.router', 'restangular', 'marvel.characters'])
 
-.config(function ($locationProvider, $urlRouterProvider) {
-  // $locationProvider.html5Mode(true).hashPrefix('!');
+.config(function ($locationProvider, $urlRouterProvider, RestangularProvider) {
+  RestangularProvider.setBaseUrl('/api');
+
+  RestangularProvider.addResponseInterceptor(function(data, operation) {
+    var extractedData;
+
+    if (operation === 'getList') {
+      extractedData = data.data.results;
+      extractedData.code = data.code;
+      extractedData.etag = data.etag;
+    }
+
+    return extractedData;
+  });
+
+  // $locationProvider.html5Mode(true);
+  // $locationProvider.hashPrefix('!');
   $urlRouterProvider.otherwise('/');
 })
 

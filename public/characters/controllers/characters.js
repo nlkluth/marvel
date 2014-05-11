@@ -2,7 +2,8 @@
 
 angular.module('marvel.characters')
 
-.controller('CharactersController', function ($scope, Characters) {
+.controller('CharactersController', function ($scope, Restangular) {
+  var Characters = Restangular.all('characters');
 
   Characters.getList().then(function(characterList) {
     $scope.characters = characterList;
