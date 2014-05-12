@@ -8,5 +8,10 @@
     <div ng-repeat="comic in character.comics.items">
       <p>{{comic.name}} - <a ng-href="{{comic.resourceURI}}">(source)</a><p>
     </div>
+
+    <h4> Additional Resource </h4>
+    <div ng-repeat="url in character.urls">
+      <a ng-href="{{url.url}}">({{url.type}})</a>
+    </div>
   </div>
 </div>
