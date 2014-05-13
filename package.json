@@ -31,9 +31,9 @@
     "grunt": "^0.4.4",
     "grunt-cli": "^0.1.13",
     "lodash": "^2.4.1",
-    "jade": "^1.3.1",
     "request": "^2.34.0",
-    "MD5": "^1.2.1"
+    "MD5": "^1.2.1",
+    "swig": "^1.3.2"
   },
   "devDependencies": {
     "karma-ng-scenario": "~0.1.0",

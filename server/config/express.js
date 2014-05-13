@@ -5,9 +5,10 @@ module.exports = function (app, config) {
 
   app.set('showStackError', true);
   app.use(express.static(config.root + '/public'));
+  app.locals.cache = 'memory';
 
   app.set('views', config.root + '/server/views');
-  app.set('view engine', 'jade');
+  app.set('view engine', 'html');
 
   app.use(function(err, req, res, next){
     // treat as 404
