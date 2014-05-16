@@ -155,6 +155,19 @@ module.exports = function(grunt) {
       }
     },
 
+    jadeUsemin: {
+      main: {
+        options: {
+          uglify: true, //whether to run uglify js besides concat [default=true]
+          prefix: '', //optional - add prefix to the path [default='']
+        },
+        files: {
+          src: ['server/views/includes/*.jade'],
+          dest: 'dist/server/views/index.jade'
+       }
+      }
+    },
+
     // The following *-min tasks produce minified files in the dist folder
     imagemin: {
       dist: {
