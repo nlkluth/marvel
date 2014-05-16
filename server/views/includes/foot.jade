@@ -1,5 +1,6 @@
 <a href="http://marvel.com">Data provided by Marvel. © 2014 MARVEL</a>
 
+//-<!-- build:js dist/public/vendor.min.js -->
 // bower:js
 script(src='../../../bower_components/jquery/dist/jquery.js')
 script(src='../../../bower_components/angular/angular.js')
@@ -12,9 +13,12 @@ script(src='../../../bower_components/angular-ui-router/release/angular-ui-route
 script(src='../../../bower_components/lodash/dist/lodash.compat.js')
 script(src='../../../bower_components/restangular/dist/restangular.js')
 // endbower
+//-<!-- endbuild -->
 
+//-<!-- build:js dist/public/scripts.min.js -->
 script(src='app.js')
 script(src='init.js')
 script(src='characters/characters.js')
 script(src='characters/routes/characters.js')
 script(src='characters/controllers/characters.js')
+//-<!-- endbuild -->
