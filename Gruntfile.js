@@ -39,8 +39,8 @@ module.exports = function(grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
+        files: ['<%= yeoman.app %>/*/assets/*.less'],
+        tasks: ['less']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -273,7 +273,7 @@ module.exports = function(grunt) {
       },
       styles: {
         expand: true,
-        cwd: '<%= yeoman.app %>/styles',
+        cwd: '<%= yeoman.app %>/**/assets/{,*/}*.css',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
       }
@@ -298,6 +298,16 @@ module.exports = function(grunt) {
       tasks: ['nodemon', 'watch'],
       options: {
         logConcurrentOutput: true
+      }
+    },
+    less: {
+      development: {
+        // options: {
+        //   paths: ['assets/css']
+        // },
+        files: {
+          '<%= yeoman.app %>/core/style/main.css' : '<%= yeoman.app %>/main.less'
+        }
       }
     },
     mochaTest: {
