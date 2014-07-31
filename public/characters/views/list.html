@@ -4,7 +4,7 @@
       <h1> Characters </h1>
       <div ng-repeat="character in characters">
         <h3>{{character.name}}</h3>
-        <img ng-src="{{character.thumbnail.path + '.' + character.thumbnail.extension}}">
+        <img class="avatar" ng-src="{{character.thumbnail.path + '.' + character.thumbnail.extension}}">
 
         <H4> Comics </h4>
         <div ng-repeat="comic in character.comics.items">
