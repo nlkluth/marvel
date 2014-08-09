@@ -8,10 +8,15 @@ head
 
   link(href='/img/icons/favicon.ico', rel='shortcut icon', type='image/x-icon')
 
+  //-<!-- build:css dist/public/vendor.css -->
   // bower:css
   link(rel='stylesheet', href='../../../bower_components/bootstrap/dist/css/bootstrap.css')
-  link(rel='stylesheet', href='../../../core/style/main.css')
   // endbower
+  //-<!-- endbuild -->
+
+  //-<!-- build:css dist/public/site.css -->
+  link(rel='stylesheet', href="../../../core/style/main.css")
+  //-<!-- endbuild -->
 
   //if lt IE 9
     script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
