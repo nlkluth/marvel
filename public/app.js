@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('marvel', ['ui.router', 'restangular', 'marvel.characters'])
+angular.module('marvel', [
+  'ui.router', 'restangular', 'marvel.characters', 'marvel.menu'
+])
 
 .config(function ($locationProvider, $urlRouterProvider, RestangularProvider) {
   RestangularProvider.setBaseUrl('/api');
