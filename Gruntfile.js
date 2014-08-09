@@ -40,7 +40,7 @@ module.exports = function(grunt) {
       },
       styles: {
         files: ['<%= yeoman.app %>/*/assets/*.less'],
-        tasks: ['less']
+        tasks: ['less', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -285,7 +285,6 @@ module.exports = function(grunt) {
           args: [],
           ignore: ['public/**', 'node_modules/**'],
           ext: 'js,html',
-          nodeArgs: ['DEBUG=shim*'],
           delayTime: 1,
           env: {
             PORT: require('./server/config/config').port
@@ -295,7 +294,7 @@ module.exports = function(grunt) {
       }
     },
     concurrent: {
-      tasks: ['nodemon', 'watch'],
+      tasks: ['watch'],
       options: {
         logConcurrentOutput: true
       }
@@ -355,6 +354,7 @@ module.exports = function(grunt) {
     'autoprefixer',
     'jshint',
     'concurrent',
+    'watch'
   ]);
 
   //Test task.
