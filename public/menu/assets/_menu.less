@@ -1,6 +1,6 @@
 @menuWidth: calc(~"100% / 6");
-@expand: calc(~"(100% / 6) + 20px");
-@contract: calc(~"(100% / 6) - 4px");
+@expand: calc(~"(100% / 6) + 50px");
+@contract: calc(~"(100% / 6) - 10px");
 
 .menu-item {
   text-align: center;
@@ -9,34 +9,81 @@
   float: left;
   margin: 0;
 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #222;
+
+  -webkit-transition: all 0.1s ease;
+     -moz-transition: all 0.1s ease;
+          transition: all 0.1s ease;
+
+  &:nth-child(1) {
+    background-image: url("../../menu/assets/images/characters.jpg");
+  }
+
+  &:nth-child(2) {
+    background-image: url("../../menu/assets/images/comics.jpg");
+  }
+
+  &:nth-child(3) {
+    background-image: url("../../menu/assets/images/creators.jpg");
+  }
+
+  &:nth-child(4) {
+    background-image: url("../../menu/assets/images/events.jpg");
+  }
+
+  &:nth-child(5) {
+    background-image: url("../../menu/assets/images/series.jpg");
+  }
+
+  &:nth-child(6) {
+    background-image: url("../../menu/assets/images/stories.jpg");
+  }
+
   a {
     font-size: 2.3rem;
     text-decoration: none;
     color: #fff;
 
     .link {
-      visibility: hidden;
       opacity: 0;
-      -webkit-transition: opacity 0.1s ease-out;
-      position: absolute;
-      top: 40%;
+      visibility: hidden;
       text-align: center;
+      height: 100%;
+
+      -webkit-transition: opacity 0.1s ease-out;
+         -moz-transition: opacity 0.1s ease-out;
+              transition: opacity 0.1s ease-out;
+
+      p {
+        position: relative;
+        top: 50%;
+        // font-size: 3.2rem;
+      }
     }
 
     &:hover {
       .link {
         visibility: visible;
-        opacity:1;
+        opacity: 1;
       }
     }
   }
 }
 
 .expand {
-  border: 1px solid black;
   width: @expand;
+
+  -webkit-transition: all 0.1s ease;
+     -moz-transition: all 0.1s ease;
+          transition: all 0.1s ease;
 }
 
 .contract {
   width: @contract;
+
+  -webkit-transition: all 0.1s ease;
+     -moz-transition: all 0.1s ease;
+          transition: all 0.1s ease;
 }
