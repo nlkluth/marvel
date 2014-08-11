@@ -305,7 +305,7 @@ module.exports = function(grunt) {
         //   paths: ['assets/css']
         // },
         files: {
-          '<%= yeoman.app %>/core/style/main.css' : '<%= yeoman.app %>/main.less'
+          '<%= yeoman.app %>/styles/site.css' : '<%= yeoman.app %>/main.less'
         }
       }
     },
@@ -351,6 +351,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'clean:server',
     'bowerInstall:dev',
+    'less',
     'autoprefixer',
     'jshint',
     'concurrent',
