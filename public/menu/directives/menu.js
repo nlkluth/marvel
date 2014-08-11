@@ -6,10 +6,20 @@ angular.module('marvel.menu')
     restrict: 'A',
     link: function(scope, element) {
       var windowHeight = $window.innerHeight;
+      if ($window.innerWidth <= 750) {
+        element.css('height', (windowHeight / 3) + 'px');
+        return;
+      }
+
       element.css('height', (windowHeight - 80) + 'px');
       element.css('max-height', '710px');
 
       var initializeWindowSize = function() {
+        if ($window.innerWidth <= 750) {
+          element.css('height', (windowHeight / 3) + 'px');
+          return;
+        }
+
         element.css('height', ($window.innerHeight - 80) + 'px');
       };
 

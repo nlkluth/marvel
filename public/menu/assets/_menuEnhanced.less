@@ -1,0 +1,40 @@
+@menuWidth: calc(~"100% / 6");
+@expand: calc(~"(100% / 6) + 50px");
+@contract: calc(~"(100% / 6) - 10px");
+
+@media only screen and (min-width: 750px) {
+  .menu-item {
+    width: @menuWidth;
+    float: left;
+    margin: 0;
+    margin-top: 3%;
+
+    a .link p {
+      top: 50%;
+    }
+
+    .transition(all);
+
+    .silhouette {
+      background: rgba(34, 34, 34, 0.8);
+
+      .transition(all);
+    }
+  }
+
+  .expand {
+    width: @expand;
+    .transition(all);
+
+    .silhouette {
+      background: rgba(34, 34, 34, 0);
+
+      .transition(all);
+    }
+  }
+
+  .contract {
+    width: @contract;
+    .transition(all);
+  }
+}
