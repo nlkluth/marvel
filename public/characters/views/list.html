@@ -1,24 +1,28 @@
 <div ng-controller="CharactersController">
-  <div class="row">
-    <div class="col-sm-5">
-      <h1> Characters </h1>
-      <div ng-repeat="character in characters">
-        <h3>{{character.name}}</h3>
-        <img class="avatar" ng-src="{{character.thumbnail.path + '.' + character.thumbnail.extension}}">
-
-        <H4> Comics </h4>
-        <div ng-repeat="comic in character.comics.items">
-          <p>{{comic.name}} - <a ng-href="{{comic.resourceURI}}">(source)</a><p>
-        </div>
-
-        <h4> Additional Resource </h4>
-        <div ng-repeat="url in character.urls">
-          <a ng-href="{{url.url}}">({{url.type}})</a>
-        </div>
+  <div class="navigation">
+    <div class="slider">
+      <div ng-repeat="character in characters"
+        marvel-image="{{character.thumbnail.path + '.' + character.thumbnail.extension}}">
+        <div>{{character.name}}</div>
       </div>
-    </div>
-    <div class="col-sm-7">
-      <div ui-view></div>
     </div>
   </div>
 </div>
+
+
+    <!-- <H4> Comics </h4>
+    <div ng-repeat="comic in character.comics.items">
+      <p>{{comic.name}} - <a ng-href="{{comic.resourceURI}}">(source)</a><p>
+    </div>
+
+    <h4> Additional Resource </h4>
+    <div ng-repeat="url in character.urls">
+      <a ng-href="{{url.url}}">({{url.type}})</a>
+    </div>
+  </div>
+</div>
+<div class="col-sm-7">
+  <div ui-view></div>
+</div>
+</div>
+ -->
