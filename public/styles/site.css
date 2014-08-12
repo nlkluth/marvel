@@ -2,19 +2,27 @@
 .navigation {
   overflow-x: hidden;
 }
-.navigation .slider {
-  width: 5000px;
-}
 .navigation div {
   height: 150px;
   width: 150px;
   float: left;
   background: rgba(35, 35, 35, 0.2);
 }
-@media only screen and (min-width: 750px) {
-  .navigation .slider {
-    width: 30%;
-  }
+.menu {
+  position: fixed;
+  bottom: 10;
+  list-style: none;
+}
+.menu div {
+  display: inline-block;
+}
+.menu div:nth-child(1) {
+  -webkit-transform: rotateZ(-20deg);
+  transform: rotateZ(-20deg);
+}
+.menu div:nth-child(3) {
+  -webkit-transform: rotateZ(20deg);
+  transform: rotateZ(20deg);
 }
 .menu-item {
   text-align: center;
@@ -61,6 +69,43 @@
   background-image: url("../../menu/assets/images/stories.jpg");
 }
 @media only screen and (min-width: 750px) {
+  .menu-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 100%;
+    z-index: -1;
+  }
+  .menu-back div {
+    height: 100%;
+    overflow: hidden;
+    width: calc((100% / 6));
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #222;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+  }
+  .menu-back div:nth-child(1) {
+    background-image: url("../../menu/assets/images/characters.jpg");
+  }
+  .menu-back div:nth-child(2) {
+    background-image: url("../../menu/assets/images/comics.jpg");
+  }
+  .menu-back div:nth-child(3) {
+    background-image: url("../../menu/assets/images/creators.jpg");
+  }
+  .menu-back div:nth-child(4) {
+    background-image: url("../../menu/assets/images/events.jpg");
+  }
+  .menu-back div:nth-child(5) {
+    background-image: url("../../menu/assets/images/series.jpg");
+  }
+  .menu-back div:nth-child(6) {
+    background-image: url("../../menu/assets/images/stories.jpg");
+  }
   .menu-item {
     width: calc(100% / 6);
     float: left;
