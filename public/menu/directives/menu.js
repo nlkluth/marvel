@@ -12,8 +12,7 @@ angular.module('marvel.menu')
       }
 
       element.css('height', (windowHeight - 80) + 'px');
-      element.css('max-height', '710px');
-
+      element.parent().parent().children().first().css('height', windowHeight + 'px');
       var initializeWindowSize = function() {
         if ($window.innerWidth <= 750) {
           element.css('height', (windowHeight / 3) + 'px');
@@ -21,6 +20,7 @@ angular.module('marvel.menu')
         }
 
         element.css('height', ($window.innerHeight - 80) + 'px');
+        element.parent().parent().children().first().css('height', windowHeight + 'px');
       };
 
       angular.element($window).bind('resize', function() {

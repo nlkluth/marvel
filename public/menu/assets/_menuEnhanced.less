@@ -8,45 +8,23 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 300px;
+    height: 800px;
     width: 100%;
     z-index: -1;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #222;
+    background-image: url("../../menu/assets/images/background.png");
 
-    div {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+
+    .silhouette {
       height: 100%;
-      overflow: hidden;
-      width: @backWidth;
-      float: left;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: #222;
-
-      -webkit-filter: blur(10px);
-              filter: blur(10px);
-
-      &:nth-child(1) {
-        background-image: url("../../menu/assets/images/characters.jpg");
-      }
-
-      &:nth-child(2) {
-        background-image: url("../../menu/assets/images/comics.jpg");
-      }
-
-      &:nth-child(3) {
-        background-image: url("../../menu/assets/images/creators.jpg");
-      }
-
-      &:nth-child(4) {
-        background-image: url("../../menu/assets/images/events.jpg");
-      }
-
-      &:nth-child(5) {
-        background-image: url("../../menu/assets/images/series.jpg");
-      }
-
-      &:nth-child(6) {
-        background-image: url("../../menu/assets/images/stories.jpg");
-      }
+      background: #222;
+      background: rgba(34, 34, 34, 0.5);
     }
   }
 
