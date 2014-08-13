@@ -36,7 +36,7 @@ module.exports = function(grunt) {
       },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'karma']
+        tasks: ['karma']
       },
       styles: {
         files: ['<%= yeoman.app %>/*/assets/*.less'],
@@ -125,10 +125,26 @@ module.exports = function(grunt) {
           }
         },
         files: [{
-          dest: '<%= yeoman.dist%>/server/views/foot.jade',
+          dest: '<%= yeoman.dist %>/../server/views/includes/foot.jade',
           src: 'server/views/includes/foot.jade'
         }, {
-          dest: '<%= yeoman.dist%>/server/views/head.jade',
+          dest: '<%= yeoman.dist %>/../server/views/includes/head.jade',
+          src: 'server/views/includes/head.jade'
+        }]
+      }
+    },
+
+    jadeFilerevUsemin: {
+      main: {
+        options: {
+          prefix: '', //optional - add prefix to the path [default='']
+          deprefix_dest: '', //optional - add prefix to the path [default='']
+        },
+        files: [{
+          dest: '<%= yeoman.dist %>/../server/views/includes/foot.jade',
+          src: 'server/views/includes/foot.jade'
+        }, {
+          dest: '<%= yeoman.dist %>/../server/views/includes/head.jade',
           src: 'server/views/includes/head.jade'
         }]
       }
@@ -222,7 +238,11 @@ module.exports = function(grunt) {
             'package.json',
             'bower.json',
             'app.js',
-            'server/**',
+            'server/*',
+            'server/config/**',
+            'server/controllers/**',
+            'server/views/*',
+            'server/views/layouts/*',
             'helpers.js',
             'config/*',
             'models/*',
@@ -293,12 +313,13 @@ module.exports = function(grunt) {
   //Default task(s).
   grunt.registerTask('build', [
     'clean:dist',
-    'jadeUsemin',
-    'autoprefixer',
     'ngmin',
-    'copy:dist',
-    'uglify',
+    'jadeUsemin',
     'rev',
+    'jadeFilerevUsemin',
+    'less',
+    'autoprefixer',
+    'copy:dist',
     'htmlmin'
   ]);
   grunt.registerTask('default', [
