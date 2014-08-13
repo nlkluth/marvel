@@ -135,35 +135,21 @@ module.exports = function(grunt) {
       }
     },
 
-    // Reads HTML for usemin blocks to enable smart builds that automatically
-    // concat, minify and revision files. Creates configurations in memory so
-    // additional tasks can operate on them
-    useminPrepare: {
-      html: '<%= yeoman.app %>/index.html',
-      options: {
-        dest: '<%= yeoman.dist %>'
-      }
-    },
-
-    // Performs rewrites based on rev and the useminPrepare configuration
-    usemin: {
-      html: ['<%= yeoman.dist %>/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
-      options: {
-        assetsDirs: ['<%= yeoman.dist %>']
-      }
-    },
-
     jadeUsemin: {
       main: {
         options: {
-          uglify: true, //whether to run uglify js besides concat [default=true]
-          prefix: '', //optional - add prefix to the path [default='']
+          tasks: {
+            js: ['concat'],
+            css: ['concat']
+          }
         },
-        files: {
-          src: ['server/views/includes/*.jade'],
-          dest: 'dist/server/views/index.jade'
-       }
+        files: [{
+          dest: '<%= yeoman.dist%>/server/views/foot.jade',
+          src: 'server/views/includes/foot.jade'
+        }, {
+          dest: '<%= yeoman.dist%>/server/views/head.jade',
+          src: 'server/views/includes/head.jade'
+        }]
       }
     },
 
@@ -220,13 +206,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Replace Google CDN references
-    cdnify: {
-      dist: {
-        html: ['<%= yeoman.dist %>/*.html']
-      }
-    },
-
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -239,10 +218,9 @@ module.exports = function(grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
-            'views/{,*/}*.html',
-            'views/{,*/}/{,*/}*.html',
-            'bower_components/**/*',
-            'images/{,*/}*.{webp}'
+            '{,*/}/views/{,*/}*.html',
+            '{,*/}/views/{,*/}/{,*/}*.html',
+            '**/images/{,*/}*.{webp}'
           ]
         }, {
           expand: true,
@@ -261,13 +239,13 @@ module.exports = function(grunt) {
           dest: './dist',
           src: [
             'package.json',
+            'bower.json',
             'app.js',
             'server/**',
             'helpers.js',
             'config/*',
             'models/*',
-            'routes/**',
-            'node_modules/**'
+            'routes/**'
           ]
         }]
       },
@@ -334,19 +312,13 @@ module.exports = function(grunt) {
   //Default task(s).
   grunt.registerTask('build', [
     'clean:dist',
-    'bowerInstall:target',
-    'useminPrepare',
+    'jadeUsemin',
     'autoprefixer',
-    'concat',
     'ngmin',
     'copy:dist',
-    'cdnify',
-    'cssmin',
     'uglify',
     'rev',
-    'usemin',
-    'htmlmin',
-    'concurrent'
+    'htmlmin'
   ]);
   grunt.registerTask('default', [
     'clean:server',
