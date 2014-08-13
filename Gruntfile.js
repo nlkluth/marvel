@@ -57,25 +57,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Make sure code styles are up to par and there are no obvious mistakes
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish'),
-        force: true
-      },
-      all: [
-        'Gruntfile.js',
-        '<%= yeoman.app %>/scripts/{,*/}*.js'
-      ],
-      test: {
-        options: {
-          jshintrc: 'test/.jshintrc'
-        },
-        src: ['test/spec/{,*/}*.js']
-      }
-    },
-
     // Empties folders to start fresh
     clean: {
       dist: {
@@ -325,7 +306,6 @@ module.exports = function(grunt) {
     'bowerInstall:dev',
     'less',
     'autoprefixer',
-    'jshint',
     'concurrent',
     'watch'
   ]);
