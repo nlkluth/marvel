@@ -1,6 +1,6 @@
 <a href="http://marvel.com">Data provided by Marvel. © 2014 MARVEL</a>
 
-//-<!-- build:js dist/public/vendor.min.js -->
+//-<!-- build:js dist/public/scripts/vendor.min.js -->
 // bower:js
 script(src='../../../bower_components/jquery/dist/jquery.js')
 script(src='../../../bower_components/angular/angular.js')
@@ -15,14 +15,15 @@ script(src='../../../bower_components/restangular/dist/restangular.js')
 // endbower
 //-<!-- endbuild -->
 
-//-<!-- build:js dist/public/scripts.min.js -->
-script(src='app.js')
-script(src='init.js')
-script(src='characters/characters.js')
-script(src='characters/controllers/characters.js')
-script(src='characters/directives/image.js')
+//-<!-- build:js dist/public/scripts/scripts.min.js -->
+script(src='../../../app.js')
+script(src='../../../init.js')
+script(src='../../../characters/characters.js')
+script(src='../../../characters/controllers/characters.js')
+script(src='../../../characters/controllers/characterDetail.js')
+script(src='../../../characters/directives/image.js')
 
-script(src='menu/menu.js')
-script(src='menu/directives/menu.js')
-script(src='layout/directives/header.js')
+script(src='../../../menu/menu.js')
+script(src='../../../menu/directives/menu.js')
+script(src='../../../layout/directives/header.js')
 //-<!-- endbuild -->
