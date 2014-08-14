@@ -1,28 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Nunito);
-.navigation {
-  overflow-x: hidden;
-}
-.navigation div {
-  height: 150px;
-  width: 150px;
-  float: left;
-  background: rgba(35, 35, 35, 0.2);
-}
 .menu {
-  position: fixed;
-  bottom: 10;
   list-style: none;
-}
-.menu div {
-  display: inline-block;
-}
-.menu div:nth-child(1) {
-  -webkit-transform: rotateZ(-20deg);
-  transform: rotateZ(-20deg);
-}
-.menu div:nth-child(3) {
-  -webkit-transform: rotateZ(20deg);
-  transform: rotateZ(20deg);
 }
 .menu-item {
   text-align: center;
