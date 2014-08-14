@@ -18,3 +18,18 @@ exports.list = function(req, res) {
     }
   });
 };
+
+exports.detail = function(req, res) {
+  var url = config.generateUrl('/public/characters/' + req.params.id);
+  debug ('requesting %s', url);
+
+  request(url, function(error, response, body) {
+    if (error) {
+      res.send(error, 500);
+    }
+
+    if (!error && response.statusCode === 200) {
+      res.send(body);
+    }
+  });
+};

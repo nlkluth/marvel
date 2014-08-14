@@ -6,4 +6,5 @@ module.exports = function(app) {
 
   app.get('/', index.render);
   app.get('/api/characters', characters.list);
+  app.get('/api/characters/:id', characters.detail);
 };
