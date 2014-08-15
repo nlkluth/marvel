@@ -1,4 +1,33 @@
 @import url(http://fonts.googleapis.com/css?family=Nunito);
+.characters {
+  padding: 40px;
+  margin-left: 5%;
+  width: 40%;
+  border: 1px solid white;
+  background: rgba(60, 60, 62, 0.8);
+  list-style: none;
+}
+.characters li {
+  display: inline-block;
+  margin: 2%;
+}
+.characters .test {
+  -webkit-mask-image: url(../../characters/assets/images/oct.png);
+  -webkit-mask-origin: center center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 90px 96px;
+}
+.characters .character {
+  padding: 5px;
+  border: 3px solid #fff;
+  border-radius: 45px;
+}
+.characters .character img {
+  width: 75px;
+  height: 75px;
+  border: 1px solid red;
+  border-radius: 40px;
+}
 .menu {
   list-style: none;
 }
@@ -72,46 +101,46 @@
     float: left;
     margin: 0;
     margin-top: 3%;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
   }
   .menu-item a .link p {
     top: 50%;
   }
   .menu-item .silhouette {
     background: rgba(34, 34, 34, 0.8);
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
   }
   .expand {
     width: calc((100% / 6) + 50px);
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
   }
   .expand .silhouette {
     background: rgba(34, 34, 34, 0);
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
   }
   .contract {
     width: calc((100% / 6) - 10px);
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
   }
 }
 body {
