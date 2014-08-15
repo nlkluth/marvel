@@ -1,15 +1,16 @@
 <div ng-controller="CharactersController">
-  <!-- <div class="navigation">
-    <div ng-repeat="character in characters"
-      marvel-image="{{character.thumbnail.path + '.' + character.thumbnail.extension}}">
-      <div><a href=""{{character.name}}</div>
-    </div>
-  </div> -->
-  <ul>
-    <li ng-repeat="character in characters">
-      <a ng-href="/#/characters/{{character.id}}">{{character.name}}</a>
-    </li>
-  </ul>
+  <div ui-view></div>
+  <div>
+    <ul class="characters">
+      <li ng-repeat="character in characters" class="test">
+        <a ng-href="/#/characters/{{character.id}}">
+          <div class="character">
+            <img ng-src="{{character.thumbnail.path + '.' + character.thumbnail.extension}}">
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
   <div class="menu">
     <div>Characters</div>
     <div>Details</div>
