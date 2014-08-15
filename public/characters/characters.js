@@ -8,8 +8,8 @@ angular.module('marvel.characters', [])
       url: '/characters',
       templateUrl: 'characters/views/list.html'
     })
-    .state('character detail', {
-      url: '/characters/:name',
+    .state('characters.detail', {
+      url: '/:id',
       templateUrl: 'characters/views/detail.html'
     });
 });
