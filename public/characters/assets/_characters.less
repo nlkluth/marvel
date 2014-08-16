@@ -5,17 +5,29 @@
   border: 1px solid white;
   background: rgba(60, 60, 62, 0.8);
   list-style: none;
+  border-radius: 0 20px;
+
+  -webkit-transform: rotateY(70deg);
+          transform: rotateY(70deg);
+
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 
   li {
     display: inline-block;
     margin: 2%;
   }
 
-  .test {
-    -webkit-mask-image: url(../../characters/assets/images/oct.png);
-    -webkit-mask-origin: center center;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 90px 96px
+  li:hover {
+    .character {
+      .transition(all);
+
+      img {
+
+        -webkit-transform: translateZ(0px);
+                transform: translateZ(0px);
+      }
+    }
   }
 
   .character {
@@ -28,10 +40,19 @@
       height: 75px;
       border: 1px solid red;
       border-radius: 40px;
+
+      -webkit-transform: translateZ(12px);
+              transform: translateZ(12px);
+
+      .transition(all);
     }
   }
 }
 
+.hud-panel {
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
 .menu {
   list-style: none;
 }

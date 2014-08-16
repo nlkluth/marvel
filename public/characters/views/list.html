@@ -1,8 +1,8 @@
 <div ng-controller="CharactersController">
   <div ui-view></div>
-  <div>
+  <div class="hud-panel">
     <ul class="characters">
-      <li ng-repeat="character in characters" class="test">
+      <li ng-repeat="character in characters">
         <a ng-href="/#/characters/{{character.id}}">
           <div class="character">
             <img ng-src="{{character.thumbnail.path + '.' + character.thumbnail.extension}}">
