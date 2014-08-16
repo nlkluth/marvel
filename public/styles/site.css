@@ -6,16 +6,26 @@
   border: 1px solid white;
   background: rgba(60, 60, 62, 0.8);
   list-style: none;
+  border-radius: 0 20px;
+  -webkit-transform: rotateY(70deg);
+  transform: rotateY(70deg);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 .characters li {
   display: inline-block;
   margin: 2%;
 }
-.characters .test {
-  -webkit-mask-image: url(../../characters/assets/images/oct.png);
-  -webkit-mask-origin: center center;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: 90px 96px;
+.characters li:hover .character {
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.characters li:hover .character img {
+  -webkit-transform: translateZ(0px);
+  transform: translateZ(0px);
 }
 .characters .character {
   padding: 5px;
@@ -27,6 +37,17 @@
   height: 75px;
   border: 1px solid red;
   border-radius: 40px;
+  -webkit-transform: translateZ(12px);
+  transform: translateZ(12px);
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.hud-panel {
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
 }
 .menu {
   list-style: none;
