@@ -10,6 +10,6 @@ angular.module('marvel.characters')
   });
 
   $scope.showDetail = function(character) {
-    $scope.character = character;
+    $scope.character = $scope.characters[character];
   };
 });

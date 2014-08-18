@@ -2,10 +2,11 @@
 
 angular.module('marvel.characters')
 
-.controller('CharactersController', function($scope, $stateParams, Restangular) {
+.controller('CharacterDetailsController', function($scope, $stateParams, Restangular) {
   if (!$scope.character) {
-    var Characters = Restangular.all('characters');
-    Characters.getOne($stateParams.id).then(function(character) {
+    var Character = Restangular.one('characters', $stateParams.id);
+    Character.get().then(function(character) {
+      console.log(character);
       $scope.character = character;
     });
   }

@@ -3,7 +3,7 @@
   <div class="hud-panel">
     <ul class="characters">
       <li ng-repeat="character in characters">
-        <a ng-href="/#/characters/{{character.id}}">
+        <a ng-href="/#/characters/{{character.id}}" ng-click="showDetail($index)">
           <div class="character">
             <img ng-src="{{character.thumbnail.path + '.' + character.thumbnail.extension}}">
           </div>
