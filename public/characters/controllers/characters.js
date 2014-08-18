@@ -8,4 +8,8 @@ angular.module('marvel.characters')
   Characters.getList().then(function(characterList) {
     $scope.characters = characterList;
   });
+
+  $scope.showDetail = function(character) {
+    $scope.character = character;
+  };
 });
