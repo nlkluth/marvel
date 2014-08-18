@@ -1,5 +1,10 @@
 <div ng-controller="CharactersController">
-  <div ui-view></div>
+  <div class="character-tab">
+    Tabs
+    <div ui-view></div>
+  </div>
+
+  <div class="character-detail" ui-view></div>
   <div class="hud-panel">
     <ul class="characters">
       <li ng-repeat="character in characters">

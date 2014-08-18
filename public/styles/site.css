@@ -52,6 +52,20 @@
 .menu {
   list-style: none;
 }
+.character-detail {
+  visibility: hidden;
+}
+.character-tab {
+  visibility: visible;
+}
+@media only screen and (min-width: 750px) {
+  .character-detail {
+    visibility: visible;
+  }
+  .character-tab {
+    visibility: hidden;
+  }
+}
 .menu-item {
   text-align: center;
   overflow: hidden;
