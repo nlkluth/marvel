@@ -1,1 +1,1 @@
-web: app.js
+web: grunt build && cd dist && app.js
