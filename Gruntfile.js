@@ -310,8 +310,6 @@ module.exports = function(grunt) {
   //Load NPM tasks
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('heroku', []);
-
   //Default task(s).
   grunt.registerTask('build', [
     'clean:dist',
