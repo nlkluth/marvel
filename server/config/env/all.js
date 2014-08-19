@@ -5,7 +5,7 @@ var rootPath = path.normalize(__dirname + '/../../../');
 
 module.exports = {
   root: rootPath,
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 5000,
   marvel: 'https://gateway.marvel.com/v1',
   publicKey: '74dea3270f83de408d2618a7d9cb001f',
   privateKey: '40103bf3248445ab3408ce4910473556b13c46c6',
