@@ -52,5 +52,8 @@
     "grunt-jade-usemin": "^0.4.0",
     "grunt-jade-filerev-usemin": "0.0.1",
     "grunt-rev": "^0.1.0"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
