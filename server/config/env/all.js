@@ -1,7 +1,10 @@
 'use strict';
 var md5 = require('MD5');
+var path = require('path');
+var rootPath = path.normalize(__dirname + '/../../../');
 
 module.exports = {
+  root: rootPath,
   port: process.env.PORT || 3000,
   marvel: 'https://gateway.marvel.com/v1',
   publicKey: '74dea3270f83de408d2618a7d9cb001f',
