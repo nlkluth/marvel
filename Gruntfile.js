@@ -316,7 +316,6 @@ module.exports = function(grunt) {
   //Default task(s).
   grunt.registerTask('build', [
     'clean:dist',
-    'npm-install',
     'ngmin',
     'jadeUsemin',
     'rev',
