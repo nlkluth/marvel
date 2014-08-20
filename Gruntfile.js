@@ -310,7 +310,7 @@ module.exports = function(grunt) {
   //Load NPM tasks
   require('load-grunt-tasks')(grunt);
   grunt.registerTask('heroku:production', function() {
-    return grunt.task.run(['build', 'nodemon:dev']);
+    return grunt.task.run(['build']);
   });
 
   //Default task(s).
