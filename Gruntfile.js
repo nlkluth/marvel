@@ -259,7 +259,7 @@ module.exports = function(grunt) {
     },
     nodemon: {
       dev: {
-        script: 'app.js',
+        script: 'dist/app.js',
         options: {
           args: [],
           ignore: ['public/**', 'node_modules/**'],
@@ -309,10 +309,14 @@ module.exports = function(grunt) {
 
   //Load NPM tasks
   require('load-grunt-tasks')(grunt);
+  grunt.registerTask('heroku:production', function() {
+    return grunt.task.run(['build', 'nodemon:dev']);
+  });
 
   //Default task(s).
   grunt.registerTask('build', [
     'clean:dist',
+    'npm-install',
     'ngmin',
     'jadeUsemin',
     'rev',
